@@ -1,0 +1,16 @@
+require 'open-uri'
+uri = URI.parse("http://www.metamorphsystems.com/index.php/api/get-balance?username=xxxxxxxxxxx&password=xxxxxxxxxxx")
+uri.open {|f|
+     f.each do |l|
+     p l
+    end
+ }
+
+
+str = "ruby exampleruby examplerub"
+url = "http://www.metamorphsystems.com/index.php/api/bulk-sms?username=xxxxxxxxxxx&password=xxxxxx&from=xxxxxx&to=xxxxxxxx&message='#{str}'"
+p url
+uri = URI.parse(URI.encode(url.strip))
+uri.open
+p uri 
+
